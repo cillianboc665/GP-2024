@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://dqu4uyyci3v2"]
+
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_ttmev"]
+[ext_resource type="Texture2D" uid="uid://chvm0jedlu5r0" path="res://assets/PNG/Sprites/Ships/spaceShips_003.png" id="2_akivi"]
+[ext_resource type="PackedScene" uid="uid://dcn4soippejj5" path="res://bullet.tscn" id="2_keew5"]
+[ext_resource type="Script" path="res://bullet_spawn_point.gd" id="4_l5mq4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hmbw5"]
+radius = 4.5
+height = 10.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_l1mfg"]
+distance = -295.25
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mkui4"]
+normal = Vector2(-0.999996, 0.00289016)
+distance = -597.879
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_23t5q"]
+distance = 64.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jbxd8"]
+distance = 31.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("bullet_spawn_point")]
+position = Vector2(256, 192)
+script = ExtResource("1_ttmev")
+bullet_scene = ExtResource("2_keew5")
+bullet_spawn_point = NodePath("Marker2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_akivi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+scale = Vector2(10, 10)
+shape = SubResource("CapsuleShape2D_hmbw5")
+
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
+position = Vector2(2, 97)
+script = ExtResource("4_l5mq4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(577, 326.75)
+shape = SubResource("WorldBoundaryShape2D_l1mfg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(525, 268)
+shape = SubResource("WorldBoundaryShape2D_mkui4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-35, 318)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_23t5q")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(511, -11)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_jbxd8")

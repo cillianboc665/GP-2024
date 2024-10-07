@@ -68,3 +68,5 @@ text = "jhjhjh"
 script = ExtResource("2_f7sqc")
 pad_scene = ExtResource("3_e7xm4")
 note_scene = ExtResource("4_i4a6q")
+
+[connection signal="pressed" from="CanvasLayer/ScrollContainer/PanelContainer/GridContainer/Button2" to="CanvasLayer/ScrollContainer/PanelContainer/GridContainer" method="_on_button_2_pressed"]

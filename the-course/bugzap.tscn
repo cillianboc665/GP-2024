@@ -20,7 +20,7 @@ size = Vector2(16, 623)
 script = ExtResource("1_s2q5l")
 
 [node name="player" type="CharacterBody2D" parent="."]
-position = Vector2(464, 730)
+position = Vector2(456, 629)
 script = ExtResource("1_vqb0a")
 explosion_scene = ExtResource("2_rwge8")
 

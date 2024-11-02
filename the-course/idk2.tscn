@@ -17,35 +17,35 @@ distance = -190.0
 
 [node name="Node2D" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="playuh" type="CharacterBody2D" parent="."]
 position = Vector2(196, 135)
 script = ExtResource("1_paw41")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="playuh"]
 texture = ExtResource("1_f1jmh")
 
-[node name="Marker2D" type="Marker2D" parent="CharacterBody2D"]
+[node name="Marker2D" type="Marker2D" parent="playuh"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="playuh"]
 polygon = PackedVector2Array(16, -35, 34, -46, 50, -46, 30, 28, 19, 27, 13, 48, -14, 49, -21, 28, -30, 28, -53, -44, -32, -44, -13, -32, -12, -49, 10, -47)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="wordl borduh" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="wordl borduh"]
 position = Vector2(196, 135)
 shape = SubResource("WorldBoundaryShape2D_ucf11")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="wordl borduh"]
 position = Vector2(196, 135)
 rotation = -3.14159
 shape = SubResource("WorldBoundaryShape2D_j3we7")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="wordl borduh"]
 position = Vector2(196, 135)
 rotation = 4.71239
 shape = SubResource("WorldBoundaryShape2D_ic85n")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="wordl borduh"]
 position = Vector2(196, 135)
 rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_boobm")

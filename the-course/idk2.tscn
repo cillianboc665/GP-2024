@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpodok3ahe1ga"]
+[gd_scene load_steps=11 format=3 uid="uid://cpodok3ahe1ga"]
 
 [ext_resource type="Texture2D" uid="uid://chvm0jedlu5r0" path="res://assets/PNG/Sprites/Ships/spaceShips_003.png" id="1_f1jmh"]
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_paw41"]
+[ext_resource type="Texture2D" uid="uid://c844yfbd26ea8" path="res://sprites/bug.png" id="3_eifdh"]
+[ext_resource type="Script" path="res://yoke.gd" id="4_45ypf"]
+[ext_resource type="Script" path="res://spiral.gd" id="5_j1c00"]
+[ext_resource type="Texture2D" uid="uid://f5yly5jsxfwa" path="res://assets/PNG/Sprites X2/Meteors/spaceMeteors_004.png" id="6_4f12n"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ucf11"]
 distance = -501.0
@@ -49,3 +53,19 @@ shape = SubResource("WorldBoundaryShape2D_ic85n")
 position = Vector2(196, 135)
 rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_boobm")
+
+[node name="yoke" type="Sprite2D" parent="."]
+position = Vector2(876, 185)
+texture = ExtResource("3_eifdh")
+script = ExtResource("4_45ypf")
+
+[node name="spiral" type="Node2D" parent="."]
+script = ExtResource("5_j1c00")
+count = null
+radius = null
+
+[node name="spiral2" type="Sprite2D" parent="."]
+texture = ExtResource("6_4f12n")
+script = ExtResource("5_j1c00")
+count = null
+radius = null

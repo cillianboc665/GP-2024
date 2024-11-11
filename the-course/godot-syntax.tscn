@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwn6odds8wggd"]
+
+[ext_resource type="Script" path="res://godotsyntax.gd" id="1_epo63"]
+[ext_resource type="Texture2D" uid="uid://dnku55dcgmtb2" path="res://icon.svg" id="2_eqqmv"]
+[ext_resource type="Script" path="res://syntax.gd" id="2_sq5ib"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpph1"]
+size = Vector2(73, 71)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(207, 134)
+script = ExtResource("2_sq5ib")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("2_eqqmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.8, 1.8)
+shape = SubResource("RectangleShape2D_hpph1")
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
+script = ExtResource("1_epo63")

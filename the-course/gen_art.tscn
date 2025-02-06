@@ -1,0 +1,78 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw4jswvml2b7m"]
+
+[ext_resource type="Script" uid="uid://xklf1eabf4vd" path="res://gen_art_bryansrepo.gd" id="1_uhwsu"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="gen_art" type="Node2D" parent="."]
+position = Vector2(592, 319)
+script = ExtResource("1_uhwsu")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 29.0
+offset_top = 35.0
+offset_right = 112.0
+offset_bottom = 58.0
+text = "Num Lines"
+
+[node name="r_inc" type="HSlider" parent="."]
+offset_left = 140.0
+offset_top = 37.0
+offset_right = 384.0
+offset_bottom = 53.0
+max_value = 10.0
+step = 0.1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 30.0
+offset_top = 89.0
+offset_right = 82.0
+offset_bottom = 112.0
+text = "Radius"
+
+[node name="theta_inc" type="HSlider" parent="."]
+offset_left = 145.0
+offset_top = 95.0
+offset_right = 386.0
+offset_bottom = 111.0
+step = 0.01
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="."]
+offset_left = 38.0
+offset_top = 135.0
+offset_right = 95.0
+offset_bottom = 181.0
+
+[node name="iterations" type="HSlider" parent="."]
+offset_left = 140.0
+offset_top = 219.0
+offset_right = 384.0
+offset_bottom = 235.0
+
+[node name="HSlider" type="HSlider" parent="."]
+offset_left = 142.0
+offset_top = 265.0
+offset_right = 390.0
+offset_bottom = 281.0
+
+[node name="HSlider2" type="HSlider" parent="."]
+offset_left = 147.0
+offset_top = 306.0
+offset_right = 388.0
+offset_bottom = 322.0
+
+[node name="thickness" type="HSlider" parent="."]
+offset_left = 149.0
+offset_top = 349.0
+offset_right = 382.0
+offset_bottom = 365.0
+
+[connection signal="value_changed" from="r_inc" to="gen_art" method="_on_r_inc_value_changed"]
+[connection signal="value_changed" from="r_inc" to="gen_art" method="_on_num_lines_value_changed"]
+[connection signal="value_changed" from="theta_inc" to="gen_art" method="_on_radius_value_changed"]
+[connection signal="value_changed" from="theta_inc" to="gen_art" method="_on_theta_inc_value_changed"]
+[connection signal="color_changed" from="ColorPickerButton" to="gen_art" method="_on_color_picker_button_color_changed"]
+[connection signal="value_changed" from="iterations" to="gen_art" method="_on_iterations_value_changed"]
+[connection signal="value_changed" from="HSlider" to="gen_art" method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="HSlider2" to="gen_art" method="_on_h_slider_2_value_changed"]
+[connection signal="value_changed" from="thickness" to="gen_art" method="_on_thickness_value_changed"]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://sw6befwpfoj5"]
+
+[ext_resource type="Script" uid="uid://cjnugqx4w20ti" path="res://enemyShooter.gd" id="1_li0x3"]
+
+[node name="enemy" type="Node2D"]
+position = Vector2(936, 498)
+script = ExtResource("1_li0x3")

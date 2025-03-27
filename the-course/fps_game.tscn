@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dygk4c04n4imt"]
+[gd_scene load_steps=14 format=3 uid="uid://dygk4c04n4imt"]
 
 [ext_resource type="Script" uid="uid://cce5vwskyjcd4" path="res://fps_dude.gd" id="1_cykxj"]
 [ext_resource type="Script" uid="uid://cudw2yan6jjem" path="res://ammo_dude.gd" id="2_jkgwa"]
 [ext_resource type="PackedScene" uid="uid://sjfix0ml77ca" path="res://gun.tscn" id="3_jkgwa"]
+[ext_resource type="PackedScene" uid="uid://cy36aygvs66pn" path="res://addons/gdquest_gobot/gobot_skin.tscn" id="4_uiy6f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o6d5r"]
 
@@ -72,9 +73,10 @@ shape = SubResource("WorldBoundaryShape3D_o6d5r")
 [node name="fps_dude" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.62525, 1.2061, 2.65134)
 script = ExtResource("1_cykxj")
-rot_speed = 180.0
+rot_speed = 3600.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="fps_dude"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0105381, -0.00985026, 0.00205183)
 shape = SubResource("CapsuleShape3D_uiy6f")
 
 [node name="Camera3D" type="Camera3D" parent="fps_dude"]
@@ -110,5 +112,9 @@ size = Vector3(1, 3, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.94063, -0.105891, -2.24836)
 operation = 2
 size = Vector3(1, 2, 2)
+
+[node name="GobotSkin" parent="." instance=ExtResource("4_uiy6f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.15796, 0.019279, 0.378684)
+blink = false
 
 [connection signal="body_entered" from="ammo" to="ammo" method="_on_body_entered"]
